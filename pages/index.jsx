@@ -1,17 +1,14 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import { getFeaturedEvents } from "../data/dummy-data";
+import EventList from "../components/events/eventList";
 
-const inter = Inter({ subsets: ['latin'] })
+export default function FeaturedEventsPage() {
 
-export default function Home() {
+  const featuredEvents = getFeaturedEvents();
+
   return (
-    <>
-      <h1>Welcome to Events Demo App</h1>
-      <ul>
-        <li>Featured Events</li>
-      </ul>
-    </>
+    <div>
+      <h1>Featured Events Page</h1>
+      <EventList items={featuredEvents} />
+    </div>
   )
 }
