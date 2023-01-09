@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <>
       <h1>Welcome to Events Demo App</h1>
+      <p>Make second commit work</p>
     </>
   )
 }
