@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import EventSummary from '../../components/event-detail/event-summary';
 import EventLogistics from '../../components/event-detail/event-logistics';
 import EventContent from '../../components/event-detail/event-content';
+import ErrorAlert from "../../components/UI/error-alert";
 
 
 export default function EventId() {
@@ -16,7 +17,8 @@ export default function EventId() {
 
     if (!event) {
         return (
-            <p>Not an event.</p>
+            <ErrorAlert><p>Not an event.</p></ErrorAlert>
+
         )
     }
 
