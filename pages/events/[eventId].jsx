@@ -4,6 +4,7 @@ import EventSummary from '../../components/event-detail/event-summary';
 import EventLogistics from '../../components/event-detail/event-logistics';
 import EventContent from '../../components/event-detail/event-content';
 import ErrorAlert from "../../components/UI/error-alert";
+import Head from 'next/head';
 
 
 export default function EventId(props) {
@@ -23,6 +24,10 @@ export default function EventId(props) {
 
     return (
         <Fragment>
+            <Head>
+                <title>{event.title}</title>
+                <meta name={event.title} description={event.description} />
+            </Head>
             <EventSummary title={event.title} />
             <EventLogistics date={event.date} address={event.location} image={event.image} imageAlt={event.title} />
             <EventContent>
