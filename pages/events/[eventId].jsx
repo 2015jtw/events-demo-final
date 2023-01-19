@@ -27,7 +27,6 @@ export default function EventId(props) {
             <EventLogistics date={event.date} address={event.location} image={event.image} imageAlt={event.title} />
             <EventContent>
                 <p>{event.description}</p>
-                <p>Changed some things</p>
             </EventContent>
         </Fragment>
     )
