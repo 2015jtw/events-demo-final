@@ -1,13 +1,13 @@
 import { useRef, useState } from "react"
 
-export default function FeedbackPage(){
+export default function FeedbackPage() {
 
     const emailInputRef = useRef();
     const textInputRef = useRef();
 
     const [feedbackItems, setFeedbackItems] = useState([]);
 
-    function submitFormHandler(event){
+    function submitFormHandler(event) {
         event.preventDefault();
 
         const enteredEmail = emailInputRef.current.value;
@@ -24,16 +24,16 @@ export default function FeedbackPage(){
             headers: {
                 'Content-Type': 'application/json'
             }
-        }).then(res => res.json()).then(data => console.log(data)) 
+        }).then(res => res.json()).then(data => console.log(data))
         // {email: 'test@gmail.com', text: 'text blah'}
     }
 
-    function loadFeedbackHandler(){
-        fetch('/api/feedback').then(res => res.json()).then(data => setFeedbackItems(data.feedback)) 
+    function loadFeedbackHandler() {
+        fetch('/api/feedback').then(res => res.json()).then(data => setFeedbackItems(data.feedback))
         // {email: 'test@gmail.com', text: 'text blah'}
     }
 
-    return(
+    return (
         <div>
             <h1>Feedback Form</h1>
 
@@ -43,7 +43,7 @@ export default function FeedbackPage(){
                     <input type="email" id="email" ref={emailInputRef} />
                 </div>
                 <div>
-                    <label htmlFor="feedback" />
+                    <label htmlFor="feedback">Your Feedback</label>
                     <textarea id="feedback" rows="5" ref={textInputRef}></textarea>
                 </div>
                 <button>Submit</button>
@@ -55,4 +55,9 @@ export default function FeedbackPage(){
             </ul>
         </div>
     )
+}
+
+export async function getStaticProps() {
+
+    return
 }
